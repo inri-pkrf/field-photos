@@ -40,7 +40,7 @@ function matchTags(videoTags, selectedTags, videoDate) {
   return true;
 }
 
-export default function Videos() {
+export default function Videos({ onSelectVideo }) {
   const navigate = useNavigate();
 
   const availableTags = useMemo(() => getAvailableTags(videoData), []);
@@ -57,6 +57,12 @@ export default function Videos() {
   // שינוי תגית בקטגוריה מסוימת
   const handleTagToggle = (category, tag) => {
     setSelectedTags(prev => {
+      if (category === "date") {
+        return {
+          ...prev,
+          date: tag ? [tag] : []
+        };
+      }
       const current = prev[category] || [];
       const isSelected = current.includes(tag);
       const updated = isSelected
@@ -67,6 +73,11 @@ export default function Videos() {
         [category]: updated
       };
     });
+  };
+
+  // כשמשתמש לוחץ על סרטון
+  const handleVideoSelect = (id) => {
+    if (onSelectVideo) onSelectVideo(id);
   };
 
   // תרגום שם קטגוריה לעברית
@@ -83,7 +94,6 @@ export default function Videos() {
     <div className="Videos-container" >
       <header className="Videos-header">
         <h1>מאגר סרטונים</h1>
-        <p>בחר סרטון לצפייה</p>
       </header>
 
       <section className="filter-section">
@@ -125,32 +135,27 @@ export default function Videos() {
             </button>
           </div>
         ) : (
-          <div className="Videos-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: 20 }}>
+          <div className="Videos-grid" >
             {filteredVideos.map(video => (
               <div
                 key={video.id}
                 className="video-card"
-                onClick={() => navigate(`/VideoPlayer?id=${video.id}`)}
+                onClick={() => handleVideoSelect(video.id)}  // משתמש בלחיצה כדי לבחור סרטון
                 style={{ cursor: 'pointer', border: "1px solid #ccc", borderRadius: 8, padding: 10 }}
               >
-                {/* <img
-                  src={process.env.PUBLIC_URL + video.thumbnail}
-                  alt={video.title}
-                  className="video-thumbnail"
-                  style={{ width: "100%", borderRadius: 6 }}
-                /> */}
                 <h4>{video.title}</h4>
                 <p>תאריך: {video.date || "לא ידוע"}</p>
-                <p>
-                  תגיות:&nbsp;
-                  {Object.entries(video.tags).map(([key, arr]) =>
-                    arr.length > 0 ? (
-                      <span key={key}>
-                        {key}: {arr.join(", ")};&nbsp;
+                <p>תגיות:</p>
+                <div className="tags-glow-container">
+                  {Object.values(video.tags)
+                    .flat()
+                    .filter(tag => tag)
+                    .map((tag, index) => (
+                      <span key={index} className="tag-glow">
+                        {tag}
                       </span>
-                    ) : null
-                  )}
-                </p>
+                    ))}
+                </div>
               </div>
             ))}
           </div>

@@ -7,7 +7,7 @@ const videoData = [
     tags: {
       emergency: [],
       location: ["חולון"],
-      date: ["2024-06"]
+      date: ["21.06"]
     },
     date: "2024-06-21"
   },
@@ -89,8 +89,8 @@ const videoData = [
     url: "https://drive.google.com/file/d/1o3oSQ__llY8zkYENhW_1NiloTKR_mB8S/view",
     thumbnail: "/thumbnails/song-20-06.jpg",
     tags: {
-      emergency: [],
-      location: [],
+      emergency: ["שיר נגד"],
+      location: ["איראן"],
       date: ["2024-06"]
     },
     date: "2024-06-20"
@@ -125,7 +125,7 @@ const videoData = [
     url: "https://drive.google.com/file/d/1LLLc6IUH2SqikvZn4yJX4R2KARhGLPjM/view",
     thumbnail: "/thumbnails/broadcast-19-06.jpg",
     tags: {
-      emergency: [],
+      emergency: ["שידור חדשות"],
       location: [],
       date: ["2024-06"]
     },
@@ -137,7 +137,7 @@ const videoData = [
     url: "https://drive.google.com/file/d/1vTk99SqJECtzLdwCHaDcX97CgA0rH7B_/view",
     thumbnail: "/thumbnails/event-18-06.jpg",
     tags: {
-      emergency: [],
+      emergency: ["אירוע"],
       location: [],
       date: ["2024-06"]
     },
@@ -162,7 +162,7 @@ const videoData = [
     thumbnail: "/thumbnails/sea-16-06.jpg",
     tags: {
       emergency: [],
-      location: [],
+      location: ["ים"],
       date: ["2024-06"]
     },
     date: "2024-06-16"
@@ -174,7 +174,7 @@ const videoData = [
     thumbnail: "/thumbnails/mountains-15-06.jpg",
     tags: {
       emergency: [],
-      location: [],
+      location: ["הרים"],
       date: ["2024-06"]
     },
     date: "2024-06-15"
@@ -186,7 +186,7 @@ const videoData = [
     thumbnail: "/thumbnails/beaches-14-06.jpg",
     tags: {
       emergency: [],
-      location: [],
+      location: ["חופים"],
       date: ["2024-06"]
     },
     date: "2024-06-14"
@@ -221,7 +221,7 @@ const videoData = [
     url: "https://drive.google.com/file/d/1ev_5vPpQWTFPl1Lr4OY8q55akZPwo0VN/view",
     thumbnail: "/thumbnails/event-11-06.jpg",
     tags: {
-      emergency: [],
+      emergency: ["אירוע"],
       location: [],
       date: ["2024-06"]
     },
@@ -233,11 +233,9 @@ const videoData = [
     url: "https://drive.google.com/file/d/1cElqR9HXh4Kz6F9DdCeQK_2PivXGd6dV/view",
     thumbnail: "/thumbnails/people-10-06.jpg",
     tags: {
-      emergency: [],
+      emergency: ["אנשים"],
       location: [],
       date: [],
-      category: ["אנשים"],
-      source: ["מצלמה"]
     },
     date: "2024-06-10"
   },
@@ -248,10 +246,8 @@ const videoData = [
     thumbnail: "/thumbnails/streets-09-06.jpg",
     tags: {
       emergency: [],
-      location: [],
-      date: [],
-      category: ["עיר"],
-      source: ["מצלמה"]
+      location: ["רחובות"],
+      date: []
     },
     date: "2024-06-09"
   },
@@ -264,8 +260,6 @@ const videoData = [
       emergency: [],
       location: ["טבע"],
       date: [],
-      category: ["טבע"],
-      source: ["מצלמה"]
     },
     date: "2024-06-08"
   },

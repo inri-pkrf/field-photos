@@ -1,9 +1,17 @@
-// components/TagFilter.jsx
 import React, { useState } from "react";
-import '../styles/TagFilter.css';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import "../styles/TagFilter.css";
 
 export default function TagFilter({ title, category, tags, activeFilters, onToggle }) {
   const [open, setOpen] = useState(false);
+  const [selectedDate, setSelectedDate] = useState(null);
+
+  const handleDateChange = (date) => {
+    setSelectedDate(date);
+    // שליחת הערך לפונקציה החיצונית
+    onToggle(category, date?.toISOString().split('T')[0]);
+  };
 
   return (
     <div className="tag-filter">
@@ -11,7 +19,7 @@ export default function TagFilter({ title, category, tags, activeFilters, onTogg
         {title} {open ? "▲" : "▼"}
       </button>
 
-      {open && (
+      {open && category !== "date" && (
         <ul className="tag-list">
           {tags.map(tag => (
             <li key={tag}>
@@ -26,6 +34,17 @@ export default function TagFilter({ title, category, tags, activeFilters, onTogg
             </li>
           ))}
         </ul>
+      )}
+
+      {open && category === "date" && (
+        <div className="date-picker-container">
+          <DatePicker
+            selected={selectedDate}
+            onChange={handleDateChange}
+            dateFormat="yyyy-MM-dd"
+            inline
+          />
+        </div>
       )}
     </div>
   );
