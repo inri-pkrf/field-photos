@@ -1,0 +1,44 @@
+.tag-filter {
+  margin-bottom: 1rem;
+}
+
+.tag-filter-toggle {
+  background: #333; /* כהה */
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  text-align: right;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 4px;
+  color: #eee; /* טקסט בהיר */
+  transition: background 0.3s;
+}
+
+.tag-filter-toggle:hover {
+  background: #555; /* כהה יותר בהאובר */
+}
+
+.tag-list {
+  list-style: none;
+  padding: 0.5rem;
+  border: 1px solid #555; /* גבול כהה יותר */
+  border-radius: 4px;
+  background: #222; /* רקע כהה */
+  max-height: 200px;
+  overflow-y: auto;
+  margin-top: 0.5rem;
+  color: #ddd; /* טקסט בהיר */
+}
+
+.tag-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.25rem 0;
+}
+
+/* סגנון לתיבת הסימון (checkbox) - שיפור ב-dark mode */
+.tag-item input[type="checkbox"] {
+  accent-color: #1e90ff; /* כחול בהיר לסימון */
+}

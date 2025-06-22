@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Home from "./Pages/Home";
+import Videos from "./Pages/Videos";
+
+// import Gallery from "./componentsJS/Gallery"; // לדוגמה
+import "./App.css";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 function App() {
+  const [category, setCategory] = useState(null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <HashRouter>
+      <div className="app-container">
+        <div className="screen right-screen scrollable">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="Videos" element={<Videos />} />
+            {/* <Route path="/gallery" element={<Gallery />} /> */}
+            {/* כאן תוסיפי עוד דפים אם תרצי */}
+          </Routes>
+        </div>
+        <div className="screen center-screen">
+          {/* קומפוננטות של המסך האמצעי */}
+        </div>
+        <div className="screen left-screen">
+          {/* קומפוננטות של המסך השמאלי */}
+        </div>
+      </div>
+    </HashRouter>
   );
 }
 

@@ -1,0 +1,65 @@
+.home-container {
+   width: 3840px;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 40px;
+  text-align: center;
+  direction: rtl;
+}
+
+.home-header h1 {
+    font-family: "Karantina";
+    font-size: 17rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(90deg, #0b619a, #1abc9c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.home-header p {
+    font-size: 5.25rem;
+    color: #f1f1f1;
+    font-family: "Heebo";
+    margin-bottom: 3rem;
+}
+
+.home-features {
+  display: flex;
+  flex-wrap: wrap;
+gap: 296px;  
+justify-content: center;
+}
+.feature-card {
+    flex: 1 1 150px;
+    max-width: 1000px;
+    height: 467px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 2rem 1.5rem;
+    border: 16px #14949c solid;
+    border-radius: 66px;
+    /* box-shadow: 0 4px 10px rgb(0 0 0 / 0.3); */
+    transition: transform 0.3s ease;
+    color: white;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(0, 173, 239, 0.7); /* Glow בכחול זוהר */
+}
+
+.feature-card h2 {
+ font-size: 6rem;
+    font-family: "HEEBO";
+    color: #14949c;
+    margin-top: 0.5rem;
+}
+
+
+.img-icon {
+     width: 300px;
+    height: auto;
+    object-fit: contain;
+    margin-top: -1rem;
+}
