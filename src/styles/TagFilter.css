@@ -30,6 +30,7 @@
   max-height: none;
   color: inherit;
   list-style: none;
+  justify-content: center; /* מרכז את התגיות במרווחים */
 }
 
 .tag-item {
@@ -40,12 +41,18 @@
   border-radius: 63px;
   display: inline-flex;
   align-items: center;
-  gap: 12px; /* הפחתתי קצת */
+  justify-content: center; /* מרכז טקסט בתוך התגית */
+  gap: 12px;
+      width: 355px;
+
   cursor: pointer;
   user-select: none;
   font-size: 3.5rem;
   transition: background-color 0.3s ease, color 0.3s ease;
+  min-width: 150px; /* רוחב מינימום - אפשר לשנות לפי הצורך */
+  text-align: center; /* ממרכז טקסט */
 }
+
 
 /* צבע רקע וכותרת בזמן מצב ה-hover */
 .tag-item:hover {

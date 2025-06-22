@@ -7,11 +7,19 @@ export default function TagFilter({ title, category, tags, activeFilters, onTogg
   const [open, setOpen] = useState(false);
   const [selectedDate, setSelectedDate] = useState(null);
 
-  const handleDateChange = (date) => {
-    setSelectedDate(date);
-    // שליחת הערך לפונקציה החיצונית
-    onToggle(category, date?.toISOString().split('T')[0]);
-  };
+const handleDateChange = (date) => {
+  setSelectedDate(date);
+  if (!date) {
+    onToggle(category, null);
+    return;
+  }
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0'); // החודש מתחיל מ-0
+  const day = String(date.getDate()).padStart(2, '0');
+
+  const formattedDate = `${year}-${month}-${day}`;
+  onToggle(category, formattedDate);
+};
 
   return (
     <div className="tag-filter">
@@ -20,21 +28,23 @@ export default function TagFilter({ title, category, tags, activeFilters, onTogg
       </button>
 
       {open && category !== "date" && (
-        <ul className="tag-list">
-          {tags.map(tag => (
-            <li key={tag}>
-              <label className="tag-item">
-                <input
-                  type="checkbox"
-                  checked={activeFilters.includes(tag)}
-                  onChange={() => onToggle(category, tag)}
-                />
-                {tag}
-              </label>
-            </li>
-          ))}
-        </ul>
-      )}
+  <ul className="tag-list">
+    {tags.map(tag => (
+      <li key={tag}>
+        <label
+          className={`tag-item ${activeFilters.includes(tag) ? "active" : ""}`}
+        >
+          <input
+            type="checkbox"
+            checked={activeFilters.includes(tag)}
+            onChange={() => onToggle(category, tag)}
+          />
+          {tag}
+        </label>
+      </li>
+    ))}
+  </ul>
+)}
 
       {open && category === "date" && (
         <div className="date-picker-container">

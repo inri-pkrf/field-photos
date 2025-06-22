@@ -1,5 +1,4 @@
 import React, { useState, useMemo } from "react";
-import { useNavigate } from "react-router-dom";
 import '../styles/Videos.css';
 import TagFilter from "../components/TagFilter";
 import videoData from "../Data/Videos/videoData";
@@ -25,12 +24,16 @@ function getAvailableTags(data) {
 
 // פונקציה לבדיקת התאמה בין תגיות נבחרות לתגיות הסרטון
 function matchTags(videoTags, selectedTags, videoDate) {
+      console.log("Selected date:", selectedTags.date[0]);
+
   for (const key in selectedTags) {
     const selected = selectedTags[key];
     if (selected.length === 0) continue;
 
     if (key === "date") {
-      if (!selected.includes(videoDate)) return false;
+      // בודק התאמה מדויקת של תאריך אחד בלבד
+      if (videoDate !== selected[0]) return false;
+      
     } else {
       const videoTagArray = videoTags[key] || [];
       const allMatch = selected.every(tag => videoTagArray.includes(tag));
@@ -40,9 +43,8 @@ function matchTags(videoTags, selectedTags, videoDate) {
   return true;
 }
 
-export default function Videos({ onSelectVideo }) {
-  const navigate = useNavigate();
 
+export default function Videos({ onSelectVideo }) {
   const availableTags = useMemo(() => getAvailableTags(videoData), []);
   const [selectedTags, setSelectedTags] = useState({
     emergency: [],
@@ -58,6 +60,7 @@ export default function Videos({ onSelectVideo }) {
   const handleTagToggle = (category, tag) => {
     setSelectedTags(prev => {
       if (category === "date") {
+        // בחר תגית אחת בלבד בתאריך
         return {
           ...prev,
           date: tag ? [tag] : []
@@ -75,9 +78,11 @@ export default function Videos({ onSelectVideo }) {
     });
   };
 
-  // כשמשתמש לוחץ על סרטון
-  const handleVideoSelect = (id) => {
-    if (onSelectVideo) onSelectVideo(id);
+  // כשמשתמש לוחץ על סרטון - שולח את האובייקט ומאחסן ב-sessionStorage
+  const handleVideoSelect = (video) => {
+    if (onSelectVideo) onSelectVideo(video);
+    sessionStorage.setItem("selectedVideo", JSON.stringify(video));
+    console.log("video selected")
   };
 
   // תרגום שם קטגוריה לעברית
@@ -95,11 +100,7 @@ export default function Videos({ onSelectVideo }) {
       <header className="Videos-header">
         <h1>מאגר סרטונים</h1>
       </header>
-
-      <section className="filter-section">
-        <h2>סינון לפי תגיות</h2>
-
-        {Object.values(selectedTags).some(arr => arr.length > 0) && (
+  {Object.values(selectedTags).some(arr => arr.length > 0) && (
           <button
             className="clear-filters-btn"
             onClick={() => setSelectedTags({ emergency: [], location: [], date: [] })}
@@ -107,6 +108,10 @@ export default function Videos({ onSelectVideo }) {
             נקה את כל התגיות
           </button>
         )}
+      <section className="filter-section">
+        <h2>סינון לפי תגיות</h2>
+
+      
 
         {/* יצירת קומפוננטת סינון עבור כל קטגוריה */}
         {["emergency", "location", "date"].map(category => (
@@ -138,9 +143,12 @@ export default function Videos({ onSelectVideo }) {
           <div className="Videos-grid" >
             {filteredVideos.map(video => (
               <div
-                key={video.id}
-                className="video-card"
-                onClick={() => handleVideoSelect(video.id)}  // משתמש בלחיצה כדי לבחור סרטון
+                 key={video.id}
+                  className="video-card"
+                  onClick={() => {
+                    console.log("clicked"); // בדיקה אם בכלל לוחצים
+                    handleVideoSelect(video);
+                  }}  // לחיצה על הסרטון
                 style={{ cursor: 'pointer', border: "1px solid #ccc", borderRadius: 8, padding: 10 }}
               >
                 <h4>{video.title}</h4>

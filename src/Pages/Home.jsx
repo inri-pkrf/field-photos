@@ -8,6 +8,8 @@ const navigate = useNavigate();
   return (
     <div  className="home-container">
       <header className="home-header">
+        <img className='logo'  src={`${process.env.PUBLIC_URL}/assets/media/whiteLogo.svg`}/>
+
         <h1>ברוכים וברוכות הבאים והבאות<br/>לעזר תמונות מהשטח</h1>
         <p>   בעזר זה תוכלו לצפות בתמונות 
         וסרטונים מהשטח בעקבות מבצע 

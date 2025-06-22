@@ -49,29 +49,22 @@ background: linear-gradient(90deg, #0b619a, #1abc9c);
 
 /* הרחבת כפתור ניקוי הסינון */
 .clear-filters-btn {
-     background-color: #11879b;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    margin-top: 20px;
-    margin-bottom: 15px;
-    height: 200px;
-    border-radius: 47px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    width: 500px;
-    /* max-width: 100%; */
-    display: block;
-    text-align: center;
-    font-size: 5rem;
-    /* order: 99; */
-    position: fixed;
-    top: 813px;
-    right: 147px;
-    /* transform: translateX(-50%); */
-    z-index: 1000;  /* מעל רוב האלמנטים בעמוד */
+  background-color: #11839b;
+  color: white;
+  font-family: "Heebo";
+  font-size: 4rem;
+  border: none;
+  border-radius: 63px;
+  padding: 10px 20px;
+  width: 600px;
+  cursor: pointer;
+  display: block;
+  margin-top: 60px;        /* מוסיף רווח מלמעלה */
+  margin-bottom: 40px;     /* מוסיף רווח כלפי מטה */
+  margin-right: 700px;     /* אפשר גם לשנות ל-auto אם את רוצה למרכז */
+  transition: background-color 0.3s ease;
 }
+
 
 
 
@@ -97,14 +90,14 @@ background: linear-gradient(90deg, #0b619a, #1abc9c);
 
 
 .filter-section {
-    display: flex;
-    margin-top: 438px;
+     display: flex;
+    margin-top: 221px;
     gap: 20px;
     flex-wrap: wrap;
     justify-content: flex-start;
 }
 .filter-section h2{
- margin-top: -117px;
+margin-top: -241px;
     font-size: 4rem;
     text-decoration: underline;
     color: white;
