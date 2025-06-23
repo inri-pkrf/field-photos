@@ -6,13 +6,7 @@
   text-align: center;
   direction: rtl;
 }
-.logo{
-    position: fixed;
-    top: 2vh;
-    right: 30%;
-    width: 14vw;
-    height: auto;
-}
+
 
 .home-header h1 {
     font-family: "Karantina";

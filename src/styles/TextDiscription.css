@@ -1,0 +1,38 @@
+.selected-media-details {
+  width: 3840px;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 40px;
+  text-align: center;
+  direction: rtl;
+  background-color: var(--background-dark);
+}
+
+.media-display {
+  max-width: 100%;
+  max-height: 400px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+
+
+.media-date {
+  font-size: 2rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.media-description {
+  font-size: 2.5rem;
+  color: #333;
+}
+.media-info h2{
+    font-family: "Karantina";
+    font-size: 19rem;
+    color: #2c3e50;
+    margin-top: 0.5rem;
+    background: linear-gradient(90deg, #ff7e00, #ffd843);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

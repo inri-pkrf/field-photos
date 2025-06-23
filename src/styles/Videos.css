@@ -47,29 +47,62 @@ background: linear-gradient(90deg, #0b619a, #1abc9c);
 }
 
 
-/* הרחבת כפתור ניקוי הסינון */
-.clear-filters-btn {
-  background-color: #11839b;
-  color: white;
-  font-family: "Heebo";
-  font-size: 4rem;
-  border: none;
-  border-radius: 63px;
-  padding: 10px 20px;
-  width: 600px;
-  cursor: pointer;
-  display: block;
-  margin-top: 60px;        /* מוסיף רווח מלמעלה */
-  margin-bottom: 40px;     /* מוסיף רווח כלפי מטה */
-  margin-right: 700px;     /* אפשר גם לשנות ל-auto אם את רוצה למרכז */
-  transition: background-color 0.3s ease;
+.active-filters {
+   background-color: #000000;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    margin-right: -484px;
+    width: 464px;
+    font-size: 4rem;
+    font-family: "Heebo";
+    height: 510px;
+    margin-top: 5.5rem;
 }
 
+.active-filters p {
+  margin: 0 0 0.5rem 0;
+  font-weight: bold;
+  color: #ffffff;
+}
 
+.active-tag {
+  display: inline-block;
+  background-color:  #128a9b;
+  color: #ffffff;
+  width:300px;
+  border-radius: 50px;
+  padding: 6px 12px;
+  margin: 5px 6px 0 0;
+  font-size: 3rem;
+  font-weight: 500;
+  border: 1px solid #b6dcf8;
+  transition: background-color 0.3s;
+}
 
+.active-tag:hover {
+  background-color: #cbe9ff;
+}
+
+.clear-filters-btn {
+     background-color: #11839b;
+    color: white;
+    font-family: "Heebo";
+    font-size: 4rem;
+    border: none;
+    border-radius: 63px;
+    padding: 10px 20px;
+    width: 488px;
+    cursor: pointer;
+    height: 97px;
+    display: block;
+    margin-top: -66px;
+    margin-bottom: 40px;
+    margin-right: -488px;
+    transition: background-color 0.3s ease;
+}
 
 .clear-filters-btn:hover {
-  background-color: #0b515d;
+  background-color: #0b505e;
 }
 
 
@@ -202,11 +235,31 @@ min-height: 565px;
 
 /* הודעה כשאין תוצאות */
 .no-results {
-  text-align: center;
-  background-color: #2a2a2a;
-  border: 1px solid #555;
-  border-radius: 10px;
-  padding: 20px;
-  color: #ffa500;
-  font-weight: bold;
+font-size: 4rem;
+    margin-right: -101px;
+    text-align: center;
+    background-color: #2a2a2a;
+    border: 1px solid #555;
+    border-radius: 10px;
+    padding: 20px;
+    color: #f8f8f8;
+    font-family: "Heebo";
+    font-weight: bold;
+    width: 100%;
+}
+.clear-filters-btn1{
+      background-color: #11839b;
+    color: white;
+    font-family: "Heebo";
+    font-size: 4rem;
+    border: none;
+    border-radius: 63px;
+    padding: 10px 20px;
+    width: 600px;
+    cursor: pointer;
+    display: block;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    margin-right: 1618px;
+    transition: background-color 0.3s ease;
 }

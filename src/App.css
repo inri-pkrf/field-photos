@@ -15,11 +15,17 @@
 }
 
 .left-screen {
-  background: linear-gradient(to left, #000000, #888888);
+  background: linear-gradient(to left, #5b5b5b, #888888);
 }
 
 .center-screen {
-  background: linear-gradient(to left, #000000, #888888);
+  background: linear-gradient(to left, #000000, #5b5b5b);
+}
+.center-screen p{
+  display: none;
+}
+.left-screen p{
+  display: none;
 }
 
 .right-screen {
@@ -31,4 +37,11 @@
   overflow-y: scroll;
   overflow-x: hidden;
     direction: rtl;
+}
+.logo{
+    position: relative;
+    top: 2vh;
+    right: 30%;
+    width: 14vw;
+    height: auto;
 }

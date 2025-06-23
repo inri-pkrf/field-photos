@@ -34,11 +34,15 @@ const handleDateChange = (date) => {
         <label
           className={`tag-item ${activeFilters.includes(tag) ? "active" : ""}`}
         >
-          <input
-            type="checkbox"
-            checked={activeFilters.includes(tag)}
-            onChange={() => onToggle(category, tag)}
-          />
+        <input
+        type="checkbox"
+        checked={activeFilters.includes(tag)}
+        onChange={() => {
+            onToggle(category, tag);
+            setOpen(false); // סגור את הטוגל לאחר לחיצה
+        }}
+        />
+
           {tag}
         </label>
       </li>
