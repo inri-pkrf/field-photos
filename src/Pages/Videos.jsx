@@ -3,6 +3,26 @@ import '../styles/Videos.css';
 import TagFilter from "../components/TagFilter";
 import videoData from "../Data/Videos/videoData";
 
+const extractDriveId = (url) => {
+  const patterns = [
+    /\/d\/([^/]+)/,            // פורמט רגיל: /d/ID/
+    /id=([^&]+)/,              // פורמט עם פרמטר id=ID
+    /file\/d\/([^/]+)/         // עוד אפשרות
+  ];
+  for (const pattern of patterns) {
+    const match = url.match(pattern);
+    if (match) return match[1];
+  }
+  return null;
+};
+
+// פונקציה שממירה מחרוזת תאריך dd-MM-yyyy לאובייקט Date תקין
+function parseDate(str) {
+  if (!str) return null;
+  const [day, month, year] = str.split("-");
+  return new Date(`${year}-${month}-${day}`);
+}
+
 // אוסף את כל התגיות האפשריות לפי קטגוריה
 function getAvailableTags(data) {
   const emergencySet = new Set();
@@ -29,7 +49,11 @@ function matchTags(videoTags, selectedTags, videoDate) {
     if (selected.length === 0) continue;
 
     if (key === "date") {
-      if (videoDate !== selected[0]) return false;
+      // השוואת תאריכים לאחר המרה לאובייקט Date
+      const videoDateObj = parseDate(videoDate);
+      const selectedDateObj = parseDate(selected[0]);
+      if (!videoDateObj || !selectedDateObj) return false;
+      if (videoDateObj.getTime() !== selectedDateObj.getTime()) return false;
     } else {
       const videoTagArray = videoTags[key] || [];
       const allMatch = selected.every(tag => videoTagArray.includes(tag));
@@ -39,7 +63,23 @@ function matchTags(videoTags, selectedTags, videoDate) {
   return true;
 }
 
-export default function Videos({ onSelectVideo }) {
+export default function Videos({ onSelectVideo, onDeselectVideo }) {
+  const [selectedVideoId, setSelectedVideoId] = useState(null);
+
+  const handleVideoSelect = (video) => {
+    if (video.id === selectedVideoId) {
+      // אם לוחצים שוב על אותו סרטון שנבחר, נשלח אירוע דה-סלקט (כדי לסגור בקומפוננטות באפליקציה)
+      setSelectedVideoId(null);
+      if (onDeselectVideo) onDeselectVideo();
+      sessionStorage.removeItem("selectedVideo");
+      if (onSelectVideo) onSelectVideo(null);
+    } else {
+      setSelectedVideoId(video.id);
+      if (onSelectVideo) onSelectVideo(video);
+      sessionStorage.setItem("selectedVideo", JSON.stringify(video));
+    }
+  };
+
   const availableTags = useMemo(() => getAvailableTags(videoData), []);
   const [selectedTags, setSelectedTags] = useState({
     emergency: [],
@@ -73,6 +113,9 @@ export default function Videos({ onSelectVideo }) {
 
   const handleClearAll = () => {
     setSelectedTags({ emergency: [], location: [], date: [] });
+    setSelectedVideoId(null);
+    sessionStorage.removeItem("selectedVideo");
+    if (onSelectVideo) onSelectVideo(null);
   };
 
   const handleRemoveFilter = (category, tag) => {
@@ -80,11 +123,6 @@ export default function Videos({ onSelectVideo }) {
       const updated = prev[category].filter(t => t !== tag);
       return { ...prev, [category]: updated };
     });
-  };
-
-  const handleVideoSelect = (video) => {
-    if (onSelectVideo) onSelectVideo(video);
-    sessionStorage.setItem("selectedVideo", JSON.stringify(video));
   };
 
   const getHebrewTitle = (key) => {
@@ -104,25 +142,28 @@ export default function Videos({ onSelectVideo }) {
 
       <section className="filter-section">
         <h2>סינון לפי תגיות</h2>
-{Object.entries(selectedTags).some(([_, arr]) => arr.length > 0) && (
-  <>
-    <div className="active-filters">
-      <p>תגיות פעילות:</p>
-            {Object.entries(selectedTags).map(([category, tags]) =>
+
+        {/* תגיות פעילות מוצגות תמיד */}
+        <div className="active-filters">
+          <p>תגיות פעילות:</p>
+          {Object.entries(selectedTags).some(([_, arr]) => arr.length > 0) ? (
+            Object.entries(selectedTags).map(([category, tags]) =>
               tags.map(tag => (
                 <span key={`${category}-${tag}`} className="active-tag">
                   {tag}
+                  <button onClick={() => handleRemoveFilter(category, tag)}>×</button>
                 </span>
               ))
-            )}
-          </div>
+            )
+          ) : (
+            <p className="no-active-tags">לא נבחרו תגיות</p>
+          )}
 
+          {/* כפתור ניקוי תמיד מוצג */}
           <button className="clear-filters-btn" onClick={handleClearAll}>
             נקה הכול
           </button>
-        </>
-      )}
-
+        </div>
 
         {["emergency", "location", "date"].map(category => (
           <TagFilter
@@ -147,25 +188,37 @@ export default function Videos({ onSelectVideo }) {
           </div>
         ) : (
           <div className="Videos-grid">
-            {filteredVideos.map(video => (
-              <div
-                key={video.id}
-                className="video-card"
-                onClick={() => handleVideoSelect(video)}
-                style={{ cursor: 'pointer', border: "1px solid #ccc", borderRadius: 8, padding: 10 }}
-              >
-                <h4>{video.title}</h4>
-                <p>תאריך: {video.date || "לא ידוע"}</p>
-                <div className="tags-glow-container">
-                  {Object.values(video.tags)
-                    .flat()
-                    .filter(tag => tag)
-                    .map((tag, index) => (
-                      <span key={index} className="tag-glow">{tag}</span>
-                    ))}
+            {filteredVideos.map(video => {
+              const driveId = extractDriveId(video.url);
+              const thumbnailUrl = driveId
+                ? `https://drive.google.com/thumbnail?id=${driveId}`
+                : null;
+
+              return (
+                <div
+                  key={video.id}
+                  className={`video-card ${selectedVideoId === video.id ? "selected" : ""}`}
+                  onClick={() => handleVideoSelect(video)}
+                >
+                  <img
+                    src={thumbnailUrl}
+                    alt={video.title}
+                    className="video-thumbnail"
+                  />
+                  <h4>{video.showTitle}</h4>
+                  <p>תאריך: {video.date || "לא ידוע"}</p>
+                  <div className="tags-glow-container">
+                    {Object.entries(video.tags).map(([category, tags]) =>
+                      tags.filter(tag => tag).map((tag, index) => (
+                        <span key={`${category}-${tag}-${index}`} className={`tag-glow-${category}`}>
+                          {tag}
+                        </span>
+                      ))
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         )}
       </section>

@@ -3,37 +3,40 @@
 }
 
 .tag-filter-toggle {
-    background: #333;
-    border: none;
-    padding: 0.5rem 1rem;
-    font-family: "Heebo";
-    font-size: 4rem;
-    text-align: center;
-    width: 100%;
-    cursor: pointer;
-    border-radius: 207px;
-    color: #eee;
-    transition: background 0.3s;
+  background: #333;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-family: "Heebo";
+  font-size: 5rem;
+  text-align: center;
+  margin-top: 3vh;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 207px;
+  color: #eee;
+
+
 }
 
 .tag-filter-toggle:hover {
   background: #555; /* כהה יותר בהאובר */
 }
 .tag-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  padding: 0;
-  margin-top: 0.5rem;
-  border: none;
-  background: transparent;
-  max-height: none;
-  color: inherit;
-  list-style: none;
-  justify-content: center; /* מרכז את התגיות במרווחים */
+  display: flex
+  ;
+      flex-wrap: wrap;
+      gap: 20px 30px;
+      padding: 0;
+      max-width: 904px;
+      margin-top: 3vh;
+      border: none;
+      background: transparent;
+      list-style: none;
+      justify-content: center;
 }
 
 .tag-item {
+  width: 400px;
   background-color: #444;
   color: #ddd;
   font-family: "Heebo";
@@ -41,17 +44,20 @@
   border-radius: 63px;
   display: inline-flex;
   align-items: center;
-  justify-content: center; /* מרכז טקסט בתוך התגית */
+  justify-content: center;
   gap: 12px;
-      width: 355px;
-
   cursor: pointer;
   user-select: none;
-  font-size: 3.5rem;
+  font-size: 4.1rem;
   transition: background-color 0.3s ease, color 0.3s ease;
-  min-width: 150px; /* רוחב מינימום - אפשר לשנות לפי הצורך */
-  text-align: center; /* ממרכז טקסט */
+  text-align: center;
+  box-sizing: border-box;
+
+  white-space: nowrap;       /* מונע ירידת שורה */
+  overflow: hidden;          /* מסתיר טקסט עודף */
+  text-overflow: ellipsis;   /* מוסיף '…' אם הטקסט נחתך */
 }
+
 
 
 /* צבע רקע וכותרת בזמן מצב ה-hover */

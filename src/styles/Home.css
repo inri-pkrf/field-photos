@@ -1,6 +1,6 @@
 .home-container {
    width: 3840px;
-  height: 100vh;
+  height: 70vh;
   box-sizing: border-box;
   padding: 40px;
   text-align: center;
@@ -47,7 +47,7 @@ justify-content: center;
 .feature-card:hover {
   transform: translateY(-5px);
   cursor: pointer;
-  box-shadow: 0 0 20px rgba(0, 173, 239, 0.7); /* Glow בכחול זוהר */
+  box-shadow: 0 0 80px rgba(0, 173, 239, 0.7); /* Glow בכחול זוהר */
 }
 
 .feature-card h2 {

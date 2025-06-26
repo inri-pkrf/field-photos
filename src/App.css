@@ -39,9 +39,9 @@
     direction: rtl;
 }
 .logo{
-    position: relative;
-    top: 2vh;
-    right: 30%;
-    width: 14vw;
-    height: auto;
+  position: relative;
+  top: 2vh;
+  right: 3%;
+  width: 8vw;
+  height: auto;;
 }

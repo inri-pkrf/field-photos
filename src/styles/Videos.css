@@ -39,11 +39,11 @@ background: linear-gradient(90deg, #0b619a, #1abc9c);
     flex-direction: column;
     margin-bottom: 1rem;
     padding-left: -49px;
-    margin-right: 291px;
+    margin-right: 90px;
     flex-direction: column;
     margin-bottom: 1rem;
     flex: 1 1 250px;
-    max-width: 738px;
+    max-width: 900px;
 }
 
 
@@ -84,21 +84,21 @@ background: linear-gradient(90deg, #0b619a, #1abc9c);
 }
 
 .clear-filters-btn {
-     background-color: #11839b;
-    color: white;
-    font-family: "Heebo";
-    font-size: 4rem;
-    border: none;
-    border-radius: 63px;
-    padding: 10px 20px;
-    width: 488px;
-    cursor: pointer;
-    height: 97px;
-    display: block;
-    margin-top: -66px;
-    margin-bottom: 40px;
-    margin-right: -488px;
-    transition: background-color 0.3s ease;
+  background-color: #11839b;
+  color: white;
+  font-family: "Heebo";
+  font-size: 4rem;
+  border: none;
+  border-radius: 63px;
+  padding: 10px 20px;
+  width: 503px;
+  cursor: pointer;
+  height: 97px;
+  display: block;
+  margin-top: -398px;
+  margin-bottom: 40px;
+  margin-right: -18px;
+  transition: background-color 0.3s
 }
 
 .clear-filters-btn:hover {
@@ -181,11 +181,11 @@ margin-top: -241px;
 .video-card {
     background-color: #080809d6;
     border-radius: 10px;
-    padding: 16px;
+    padding: 10px;
     box-shadow: var(--card-shadow);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-min-height: 565px;
-}
+    height: 847px;
+  }
 
 .video-card:hover {
   transform: translateY(-3px);
@@ -193,44 +193,72 @@ min-height: 565px;
 }
 
 .video-card h4 {
-  font-size: 4rem;
+  font-size: 4.5rem;
   font-family: "Heebo";
-  margin-bottom: 8px;
+  margin-top: 11px;
   color: white;
 }
 
+.video-thumbnail {
+  padding-top: 7%;
+  width: 77%;
+  height: 43%;
+  border-bottom: 1px solid #444;
+}
 
 .tags-glow-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  margin-top: -5px;
-  justify-content: center; /* מרכז את התגיות */
+  gap: 100px;
+  margin-top: -7px;
+  justify-content:center; /* מרכז את התגיות */
 
 }
 
-.tag-glow {
-  background-color:transparent; /* צבע רקע */
-  color: rgb(26, 188, 156);
+.tag-glow-emergency {
+  background-color: transparent;
+  color: #bb86fc;
   padding: 6px 12px;
   border-radius: 30px;
-  font-size: 3rem;
+  font-size: 4rem;
   font-family: "Heebo", sans-serif;
-  box-shadow: 0 0 10px rgba(26, 188, 156, 0.6); /* glow */
+  box-shadow: 0 0 20px #bb86fc;
+  transition: transform 0.2s ease;
+  white-space: nowrap;
+}
+.tag-glow-date {
+  display: none;
+}
+
+.tag-glow-location {
+  background-color: transparent;
+  color: #3498db; /* כחול */
+  padding: 6px 12px;
+  border-radius: 30px;
+  font-size: 4rem;
+  font-family: "Heebo", sans-serif;
+  box-shadow: 0 0 20px rgba(52, 152, 219, 0.6);
   transition: transform 0.2s ease;
   white-space: nowrap;
 }
 
-.tag-glow:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(26, 188, 156, 0.9);
-}
-
 
 .video-card p {
-  font-size:3.5rem;
-  margin-bottom: 4px;
+  font-size: 4rem;
+  margin-top: -75px;
+  font-family: "Heebo";
   color: white;
+}
+.video-card.selected {
+  box-shadow: 0 0 100px #14969c;
+  background-color: rgb(36, 36, 36);
+
+
+}
+.video-card:hover{
+  box-shadow: 0 0 100px #14969c;;
+  cursor: pointer;
+
 }
 
 /* הודעה כשאין תוצאות */

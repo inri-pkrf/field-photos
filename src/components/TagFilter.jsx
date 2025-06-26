@@ -17,7 +17,7 @@ const handleDateChange = (date) => {
   const month = String(date.getMonth() + 1).padStart(2, '0'); // החודש מתחיל מ-0
   const day = String(date.getDate()).padStart(2, '0');
 
-  const formattedDate = `${year}-${month}-${day}`;
+  const formattedDate = `${day}-${month}-${year}`;
   onToggle(category, formattedDate);
 };
 
@@ -55,7 +55,7 @@ const handleDateChange = (date) => {
           <DatePicker
             selected={selectedDate}
             onChange={handleDateChange}
-            dateFormat="yyyy-MM-dd"
+            dateFormat="dd-MM-yyyy"
             inline
           />
         </div>

@@ -25,8 +25,8 @@ function AppWrapper() {
   return (
     <div className="app-container">
       {/* ימין */}
-      <div className="screen right-screen scrollable">
-        <img className='logo'  src={`${process.env.PUBLIC_URL}/assets/media/whiteLogo.svg`}/>
+      <div className={`screen right-screen ${isHome ? "" : "scrollable"}`}>
+      <img className='logo'  src={`${process.env.PUBLIC_URL}/assets/media/whiteLogo.svg`}/>
 
         <Routes>
           <Route path="/" element={<Home />} />
