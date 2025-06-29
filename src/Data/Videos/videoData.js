@@ -653,5 +653,18 @@ const videoData = [
     showTitle:'נפילת טיל ברחובות'
 
   },
+  {
+    id: 51,
+    title: "20.06 סרטון וי ג'י אי ",
+    url: "https://drive.google.com/file/d/1bu9Bh2axK8z-AqOYjoKel9g5ywh_aPkJ/view",
+    tags: {
+      emergency: ["סרטון וי ג'י איי"],
+      location: [],
+    },
+      description:"תיאור תיאור ",
+    date: "20-06-2025",
+    showTitle:'בלה בלה '
+
+  },
 ]
 export default videoData;
