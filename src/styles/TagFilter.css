@@ -1,5 +1,23 @@
 .tag-filter {
-  margin-bottom: 1rem;
+  display: flex;
+
+}
+
+.tag-filter hr {
+  width: 3378px;
+  position: relative;
+  right: 7%;
+  border: none;
+  padding-top: 2vh;
+  border-bottom: 5px solid #ffffff78;
+  margin: 10px auto 0;
+}
+
+.tag-filter-content-wrapper {
+  display: flex;
+  flex-direction: row; /* כדי שהתוכן יופיע מצד הכפתור */
+  align-items: flex-start; /* ליישר למעלה */
+  gap: 1rem; /* רווח בין הכפתור לפאנל */
 }
 
 .tag-filter-toggle {
@@ -10,10 +28,12 @@
   font-size: 5rem;
   text-align: center;
   margin-top: 3vh;
-  width: 100%;
+  width: 700px;
   cursor: pointer;
   border-radius: 207px;
   color: #eee;
+  flex-shrink: 0;   /* למנוע הקטנה */
+flex-grow: 0;     /* למנוע הגדלה */
 
 
 }
@@ -22,41 +42,39 @@
   background: #555; /* כהה יותר בהאובר */
 }
 .tag-list {
-  display: flex
-  ;
-      flex-wrap: wrap;
+  margin-right: 43vw;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
       gap: 20px 30px;
       padding: 0;
-      max-width: 904px;
-      margin-top: 3vh;
       border: none;
       background: transparent;
       list-style: none;
       justify-content: center;
 }
 
+
 .tag-item {
-  width: 400px;
   background-color: #444;
   color: #ddd;
   font-family: "Heebo";
   padding: 6px 12px;
   border-radius: 63px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
   cursor: pointer;
   user-select: none;
-  font-size: 4.1rem;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  width:600px;
+  font-size: 4.5rem;
   text-align: center;
   box-sizing: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
-  white-space: nowrap;       /* מונע ירידת שורה */
-  overflow: hidden;          /* מסתיר טקסט עודף */
-  text-overflow: ellipsis;   /* מוסיף '…' אם הטקסט נחתך */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 
 
 
@@ -77,10 +95,10 @@
   display: none;
 }
 .date-picker-container .react-datepicker {
-        width: 1000px !important;
-    left: 247px;
+    width: 1000px !important;
+    right: 607px;
     height: 1000px !important;
-    top: 42px;
+    top: 92px;
     background-color: #121212 !important;
     color: #e0e0e0 !important;
     font-size: 3rem !important;
@@ -90,7 +108,9 @@
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.7) !important;
     box-sizing: border-box !important;
     display: flex !important;
-    flex-direction: column !important;
+    flex-direction: row !important;
+    margin-bottom: 2rem !important; /* רווח תחתון שמונע הדבקה לגבול התחתון */
+
 }
 
 .date-picker-container .react-datepicker__month {
@@ -230,3 +250,37 @@
     position: relative;
 }
 
+.tag-filter-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 3rem;
+  align-items: flex-start;
+}
+.selected-tags-inline {
+  margin-right: 4vw;
+  display: inline-flex;
+  margin-top: 2vh;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.selected-tag {
+  background-color: #007bff;
+  color: white;
+  font-family: "Heebo";
+  padding: 6px 12px;
+  border-radius: 63px;
+  cursor: pointer;
+  user-select: none;
+  width:600px;
+  font-size: 4.5rem;
+  text-align: center;
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

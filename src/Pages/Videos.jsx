@@ -68,7 +68,6 @@ export default function Videos({ onSelectVideo, onDeselectVideo }) {
 
   const handleVideoSelect = (video) => {
     if (video.id === selectedVideoId) {
-      // אם לוחצים שוב על אותו סרטון שנבחר, נשלח אירוע דה-סלקט (כדי לסגור בקומפוננטות באפליקציה)
       setSelectedVideoId(null);
       if (onDeselectVideo) onDeselectVideo();
       sessionStorage.removeItem("selectedVideo");
@@ -108,7 +107,7 @@ export default function Videos({ onSelectVideo, onDeselectVideo }) {
       return { ...prev, [category]: updated };
     });
 
-    setOpenCategory(null); // סוגר את ה-dropdown אחרי בחירה
+    setOpenCategory(null);
   };
 
   const handleClearAll = () => {
@@ -143,27 +142,13 @@ export default function Videos({ onSelectVideo, onDeselectVideo }) {
       <section className="filter-section">
         <h2>סינון לפי תגיות</h2>
 
-        {/* תגיות פעילות מוצגות תמיד */}
-        <div className="active-filters">
-          <p>תגיות פעילות:</p>
-          {Object.entries(selectedTags).some(([_, arr]) => arr.length > 0) ? (
-            Object.entries(selectedTags).map(([category, tags]) =>
-              tags.map(tag => (
-                <span key={`${category}-${tag}`} className="active-tag">
-                  {tag}
-                  <button onClick={() => handleRemoveFilter(category, tag)}>×</button>
-                </span>
-              ))
-            )
-          ) : (
-            <p className="no-active-tags">לא נבחרו תגיות</p>
-          )}
+  
 
-          {/* כפתור ניקוי תמיד מוצג */}
-          <button className="clear-filters-btn" onClick={handleClearAll}>
-            נקה הכול
-          </button>
-        </div>
+  <button className="clear-filters-btn" onClick={handleClearAll}>
+    נקה הכול
+  </button>
+
+
 
         {["emergency", "location", "date"].map(category => (
           <TagFilter
@@ -190,9 +175,6 @@ export default function Videos({ onSelectVideo, onDeselectVideo }) {
           <div className="Videos-grid">
             {filteredVideos.map(video => {
               const driveId = extractDriveId(video.url);
-              const thumbnailUrl = driveId
-                ? `https://drive.google.com/thumbnail?id=${driveId}`
-                : null;
 
               return (
                 <div
@@ -200,11 +182,17 @@ export default function Videos({ onSelectVideo, onDeselectVideo }) {
                   className={`video-card ${selectedVideoId === video.id ? "selected" : ""}`}
                   onClick={() => handleVideoSelect(video)}
                 >
-                  <img
-                    src={thumbnailUrl}
-                    alt={video.title}
-                    className="video-thumbnail"
-                  />
+                  {driveId ? (
+                     <img
+                     src={`https://drive.google.com/thumbnail?id=${driveId}`}
+                     alt={video.title}
+                     className="video-thumbnail"
+                     onClick={() => handleVideoSelect(video)}
+                   />
+                  ) : (
+                    <div className="no-preview">אין תצוגה מקדימה</div>
+                  )}
+
                   <h4>{video.showTitle}</h4>
                   <p>תאריך: {video.date || "לא ידוע"}</p>
                   <div className="tags-glow-container">

@@ -51,7 +51,7 @@ function AppWrapper() {
       {/* שמאל */}
       <div className="screen left-screen">
         {isHome ? (
-          <p>כאן תופיע תיאור הסרטון כשתבחרי אחד</p>
+          <p> </p>
         ) : (
           <TextDiscription media={selectedVideo} />
         )}

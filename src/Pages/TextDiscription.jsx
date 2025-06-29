@@ -9,6 +9,7 @@ export default function TextDiscription({ media }) {
   return (
     <div className="selected-media-details">
       <div className="media-info">
+        <div></div>
         <h2>{media.showTitle}</h2>
         <p className="media-date">{media.date}</p>
         <p className="media-description">{media.description}</p>

@@ -87,18 +87,15 @@ background: linear-gradient(90deg, #0b619a, #1abc9c);
   background-color: #11839b;
   color: white;
   font-family: "Heebo";
-  font-size: 4rem;
+  font-size: 4.5rem;
   border: none;
   border-radius: 63px;
   padding: 10px 20px;
-  width: 503px;
+  width: 600px;
   cursor: pointer;
-  height: 97px;
+  height: 132px;
+  margin-right: 2vw;
   display: block;
-  margin-top: -398px;
-  margin-bottom: 40px;
-  margin-right: -18px;
-  transition: background-color 0.3s
 }
 
 .clear-filters-btn:hover {
@@ -123,11 +120,12 @@ background: linear-gradient(90deg, #0b619a, #1abc9c);
 
 
 .filter-section {
-     display: flex;
-    margin-top: 221px;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+  display: flex;
+      flex-direction: column;
+      margin-top: 221px;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: flex-start;
 }
 .filter-section h2{
 margin-top: -241px;
@@ -200,6 +198,12 @@ margin-top: -241px;
 }
 
 .video-thumbnail {
+  padding-top: 7%;
+  width: 77%;
+  height: 43%;
+  border-bottom: 1px solid #444;
+}
+.video-preview{
   padding-top: 7%;
   width: 77%;
   height: 43%;
