@@ -26,16 +26,12 @@ function AppWrapper() {
   return (
     <div className="app-container">
       {/* ימין */}
-      <div className={`screen right-screen ${isHome ? "" : "scrollable"}`}>
-      <img className='logo'  src={`${process.env.PUBLIC_URL}/assets/media/whiteLogo.svg`} onClick={()=>navigate("/")}/>
-
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route
-            path="/Videos"
-            element={<Videos onSelectVideo={setSelectedVideo} />}
-          />
-        </Routes>
+      <div className="screen right-screen">
+      {isHome ? (
+          <p> </p>
+        ) : (
+          <TextDiscription media={selectedVideo} />
+        )}
       </div>
 
       {/* מרכז */}
@@ -50,12 +46,17 @@ function AppWrapper() {
       </div>
 
       {/* שמאל */}
-      <div className="screen left-screen">
-        {isHome ? (
-          <p> </p>
-        ) : (
-          <TextDiscription media={selectedVideo} />
-        )}
+      <div className={`screen left-screen ${isHome ? "" : "scrollable"}`} >
+      <img className='logo'  src={`${process.env.PUBLIC_URL}/assets/media/whiteLogo.svg`} onClick={()=>navigate("/")}/>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route
+          path="/Videos"
+          element={<Videos onSelectVideo={setSelectedVideo} />}
+        />
+      </Routes>
+       
       </div>
     </div>
   );

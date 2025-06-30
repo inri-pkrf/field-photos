@@ -36,7 +36,7 @@ export default function TagFilter({ title, category, tags, activeFilters, onTogg
     
 
         {!open && activeFilters.length > 0 && (
-          <div className="selected-tags-inline" style={{display: "flex", gap: "6px", flexWrap: "wrap"}}>
+          <div className="selected-tags-inline" >
             {activeFilters.map((tag) => (
               <span key={tag} className="selected-tag" >
                 {tag}

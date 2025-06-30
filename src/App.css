@@ -14,19 +14,19 @@
   padding: 40px;
 }
 
-.left-screen {
-  background: linear-gradient(to left, #5b5b5b, #888888);
+.right-screen {
+  background: linear-gradient(to right, #5b5b5b, #888888);
 }
 
 .center-screen {
-  background: linear-gradient(to left, #000000, #5b5b5b);
+  background: linear-gradient(to right, #000000, #5b5b5b);
 }
 .center-screen p{
   display: none;
 }
 
 
-.right-screen {
+.left-screen {
   background-color: #131313;
   
 }
@@ -40,6 +40,7 @@
   position: relative;
   top: 2vh;
   right: 3%;
-  width: 8vw;
-  height: auto;;
+  width: 6vw;
+  height: auto;
+  cursor: pointer;
 }

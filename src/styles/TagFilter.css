@@ -42,15 +42,15 @@ flex-grow: 0;     /* למנוע הגדלה */
   background: #555; /* כהה יותר בהאובר */
 }
 .tag-list {
-  margin-right: 43vw;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px 30px;
-      padding: 0;
-      border: none;
-      background: transparent;
-      list-style: none;
-      justify-content: center;
+  margin-left: -2000px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px 30px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  list-style: none;
+  justify-content: center;
 }
 
 
@@ -258,11 +258,16 @@ flex-grow: 0;     /* למנוע הגדלה */
   align-items: flex-start;
 }
 .selected-tags-inline {
-  margin-right: 4vw;
-  display: inline-flex;
-  margin-top: 2vh;
-  gap: 6px;
-  flex-wrap: wrap;
+  margin-right: 100px;
+  margin-top:3vh ;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px 30px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  list-style: none;
+  justify-content: center;
 }
 
 .selected-tag {
