@@ -15,7 +15,7 @@ const videoData = [
   {
     id: 2,
     title: "19.06 פגיעת טיל ",
-    url: "https://drive.google.com/file/d/1kubu5SJmYMeI0Dyn87x2st6ySNRxB106/view",
+    url: "https://drive.google.com/file/d/1KE1r42dsDzBaXMMXcesWkQdL9X7zb_fx/view",
     tags: {
       emergency: [],
       location: [],

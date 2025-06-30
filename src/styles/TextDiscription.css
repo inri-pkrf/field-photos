@@ -11,6 +11,8 @@
 
 .media-date,
 .media-description {
+  font-family: "Heebo";
+  font-size: 8rem;
   color: white;
 }
 

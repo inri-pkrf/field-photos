@@ -5,9 +5,10 @@ import VideoPlayer from "./Pages/VideoPlayer";
 import TextDiscription from "./Pages/TextDiscription";
 
 import "./App.css";
-import { HashRouter, Routes, Route, useLocation } from "react-router-dom";
+import { HashRouter, Routes, Route, useLocation, useNavigate } from "react-router-dom";
 
 function AppWrapper() {
+  const navigate=useNavigate();
   const location = useLocation();
   const [selectedVideo, setSelectedVideo] = useState(() => {
     const saved = sessionStorage.getItem("selectedVideo");
@@ -26,7 +27,7 @@ function AppWrapper() {
     <div className="app-container">
       {/* ימין */}
       <div className={`screen right-screen ${isHome ? "" : "scrollable"}`}>
-      <img className='logo'  src={`${process.env.PUBLIC_URL}/assets/media/whiteLogo.svg`}/>
+      <img className='logo'  src={`${process.env.PUBLIC_URL}/assets/media/whiteLogo.svg`} onClick={()=>navigate("/")}/>
 
         <Routes>
           <Route path="/" element={<Home />} />
