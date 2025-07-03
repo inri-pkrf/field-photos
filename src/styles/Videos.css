@@ -38,50 +38,16 @@ background: linear-gradient(90deg, #0b619a, #1abc9c);
   display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
-    padding-left: -49px;
-    margin-right: 90px;
-    flex-direction: column;
+     flex-direction: column;
     margin-bottom: 1rem;
     flex: 1 1 250px;
     max-width: 900px;
 }
 
 
-.active-filters {
-   background-color: #000000;
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    margin-right: -484px;
-    width: 464px;
-    font-size: 4rem;
-    font-family: "Heebo";
-    height: 510px;
-    margin-top: 5.5rem;
-}
 
-.active-filters p {
-  margin: 0 0 0.5rem 0;
-  font-weight: bold;
-  color: #ffffff;
-}
 
-.active-tag {
-  display: inline-block;
-  background-color:  #128a9b;
-  color: #ffffff;
-  width:300px;
-  border-radius: 50px;
-  padding: 6px 12px;
-  margin: 5px 6px 0 0;
-  font-size: 3rem;
-  font-weight: 500;
-  border: 1px solid #b6dcf8;
-  transition: background-color 0.3s;
-}
 
-.active-tag:hover {
-  background-color: #cbe9ff;
-}
 
 .clear-filters-btn {
   background-color: #11839b;
@@ -115,7 +81,7 @@ background: linear-gradient(90deg, #0b619a, #1abc9c);
   gap: 0.5rem 1rem; /* רווח בין שורות לעמודות */
   max-height: 200px; /* אם רוצים הגבלה גובה עם גלילה */
   overflow-y: auto;
-  padding-right: 5px; /* קצת ריווח לשם גלילה RTL */
+  padding-right: 5px; 
 }
 
 
@@ -123,6 +89,7 @@ background: linear-gradient(90deg, #0b619a, #1abc9c);
   display: flex;
       flex-direction: column;
       margin-top: 221px;
+      margin-left: 20px;
       gap: 20px;
       flex-wrap: wrap;
       justify-content: flex-start;

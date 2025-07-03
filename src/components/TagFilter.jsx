@@ -30,59 +30,27 @@ export default function TagFilter({ title, category, tags, activeFilters, onTogg
   return (
     <div className={`tag-filter ${open ? "open" : ""}`}>
       <div className="tag-filter-content-wrapper" style={{display: "flex", alignItems: "center", gap: "10px"}}>
-        <button className="tag-filter-toggle" onClick={toggleOpen}>
-          <span className="filter-title">{title}</span> {open ? "▶" : "◀"}
-        </button>
-    
-
-        {!open && activeFilters.length > 0 && (
-          <div className="selected-tags-inline" >
-            {activeFilters.map((tag) => (
-              <span key={tag} className="selected-tag" >
-                {tag}
-              </span>
-            ))}
-          </div>
-        )}
+          <span className="filter-title">{title}</span> 
       </div>
-
-      {open && (
-        <div className={`tag-filter-content ${category === "date" ? "date" : "tags"}`}>
-          {category === "date" ? (
-            <div className="date-picker-container">
-              <DatePicker
-                selected={selectedDate}
-                onChange={handleDateChange}
-                dateFormat="dd-MM-yyyy"
-                inline
-                locale={he} 
-                calendarStartDay={0}
-              />
-            </div>
-          ) : (
-            <ul className="tag-list">
-              {tags.map((tag) => (
-                <li key={tag}>
-                  <label
-                    className={`tag-item ${activeFilters.includes(tag) ? "active" : ""}`}
-                  >
-                    <input
-                      type="checkbox"
-                      checked={activeFilters.includes(tag)}
-                      onChange={() => {
-                        onToggle(category, tag);
-                        setOpen(false);
-                      }}
-                    />
-                    {tag}
-                  </label>
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
-      )}
-      <hr></hr>
+       
+      {/* תגיות לבחירה */}
+      <div className="tag-items-container">
+        {tags.map((tag) => (
+          <label
+            key={tag}
+            className={`tag-item ${activeFilters.includes(tag) ? "active" : ""}`}
+          >
+            <input
+              type="checkbox"
+              checked={activeFilters.includes(tag)}
+              onChange={() => onToggle(category, tag)}
+              style={{ display: "none" }}
+            />
+            {tag}
+          </label>
+        ))}
+      </div>
     </div>
+
   );
 }
