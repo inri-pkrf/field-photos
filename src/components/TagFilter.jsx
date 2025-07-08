@@ -29,7 +29,7 @@ export default function TagFilter({ title, category, tags, activeFilters, onTogg
 
   return (
     <div className={`tag-filter ${open ? "open" : ""}`}>
-      <div className="tag-filter-content-wrapper" style={{display: "flex", alignItems: "center", gap: "10px"}}>
+      <div className="tag-filter-content-wrapper" style={{display: "flex", alignItems: "center"}}>
           <span className="filter-title">{title}</span> 
       </div>
        

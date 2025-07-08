@@ -3,7 +3,7 @@ import Home from "./Pages/Home";
 import Videos from "./Pages/Videos";
 import VideoPlayer from "./Pages/VideoPlayer";
 import TextDiscription from "./Pages/TextDiscription";
-
+import NavMain from "./Pages/NavMain";
 import "./App.css";
 import { HashRouter, Routes, Route, useLocation, useNavigate } from "react-router-dom";
 
@@ -47,7 +47,7 @@ function AppWrapper() {
 
       {/* שמאל */}
       <div className={`screen left-screen ${isHome ? "" : "scrollable"}`} >
-      <img className='logo'  src={`${process.env.PUBLIC_URL}/assets/media/whiteLogo.svg`} onClick={()=>navigate("/")}/>
+      <NavMain/>
 
       <Routes>
         <Route path="/" element={<Home />} />

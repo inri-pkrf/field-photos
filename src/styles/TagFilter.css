@@ -1,13 +1,17 @@
 .tag-filter {
+  MARGIN-TOP: 3VH;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100vw;
   box-sizing: border-box;
-  padding: 0 30px; /* רווח קטן מהקצוות */
+  padding: 0 30px;
+  text-align: center; 
 }
 
 .tag-filter-content-wrapper {
-  margin-bottom: 15px;
+  margin-bottom: -5px;
 }
 
 .filter-title {
@@ -19,11 +23,11 @@
 
 /* כאן הקונטיינר של התגיות מוגבל ל-1280 פיקסלים ומרכזי */
 .tag-items-container {
-  display: grid;
+  display: inline-grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  width: 100%;
-  margin: 0 auto; /* מרכז את הקונטיינר במסך */
+  max-width: 1000px;
+  margin: 0 auto;
   box-sizing: border-box;
 }
 
@@ -43,12 +47,12 @@
 }
 
 .tag-item:hover {
-  background-color: #1e90ff;
+  background-color: #00abd6;
   color: white;
 }
 
 .tag-item.active {
-  background-color: #007bff;
+  background-color:  #00abd6;
   color: white;
 }
 

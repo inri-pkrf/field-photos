@@ -86,7 +86,7 @@ const videoData = [
     title: "19.06 רמת גן",
     url: "https://drive.google.com/file/d/1mpxC-6aB3FsNp9AB7YczfVi6MGPff8hJ/view",
     tags: {
-      emergency: ["פגיעת טיל"],
+      emergency: ["נפילת טיל"],
       location: ["רמת גן"],
     },
     date: "19-06-2025",
@@ -113,7 +113,7 @@ const videoData = [
     url: "https://drive.google.com/file/d/1NNOUlNKPmcRZxnYN3gIZGxNcNhmGndUT/view",
     tags: {
       emergency: [],
-      location: ["מרכז"],
+      location: ["מרכז הארץ"],
     },
     date: "18-06-2025",
     showTitle:"מגרש רכבים במרכז ",  
@@ -260,7 +260,7 @@ const videoData = [
     title: "פגיעה ישירה16.06 ",
     url: "https://drive.google.com/file/d/1kYmhjNoTR_EqciIYS-a_nym65SSfwIke/view",
     tags: {
-      emergency: ["פגיעת טיל"],
+      emergency: ["נפילת טיל"],
       location: [],
     },
     date: "16-06-2025",
@@ -286,7 +286,7 @@ const videoData = [
     title: "19.06 פגיעה ישירה",
     url: "https://drive.google.com/file/d/1KE1r42dsDzBaXMMXcesWkQdL9X7zb_fx/view",
     tags: {
-      emergency: ["פגיעת טיל"],
+      emergency: ["נפילת טיל"],
       location: [],
     },
     date: "19-06-2025",
@@ -298,7 +298,7 @@ const videoData = [
     title: "19.06 רמת גן ",
     url: "https://drive.google.com/file/d/1f_O6KQ5zW3br0AUO3XXbewfpkkk30ksU/view",
     tags: {
-      emergency: ["פגיעת טיל"],
+      emergency: ["נפילת טיל"],
       location: ["רמת גן"],
     },
     date: "19-06-2025",
@@ -438,7 +438,7 @@ const videoData = [
     url: "https://drive.google.com/file/d/1rc_SZyBIXseyptnHhIGYU2YMTMhk0_6q/view",
     tags: {
       emergency: ["זירת הרס"],
-      location: ["צפון"],
+      location: ["צפון הארץ"],
     },
     date: "22-06-2025",
     description:"תיאור תיאור ",
@@ -451,7 +451,7 @@ const videoData = [
     url: "https://drive.google.com/file/d/16h-PKoCUY26cqmsJWPowabGwzsDcQALJ/view",
     tags: {
       emergency: ["עשן"],
-      location: ["צפון"],
+      location: ["צפון הארץ"],
     },
       description:"תיאור תיאור ",
     date: "22-06-2025",
@@ -515,7 +515,7 @@ const videoData = [
     title: "23.06 אשדוד",
     url: "https://drive.google.com/file/d/1NhFaYI1bUKF4WXa0W3JJFIvs-H5wRK85/view",
     tags: {
-      emergency: ["פגיעת טיל"],
+      emergency: ["נפילת טיל"],
       location: ["אשדוד"],
     },
       description:"תיאור תיאור ",
@@ -645,7 +645,7 @@ const videoData = [
     title: "19.06 רחובות ",
     url: "https://drive.google.com/file/d/1wyrK9iLlSa2sC4V9GELYp9wtQAkJ8TGj/view",
     tags: {
-      emergency: ["פגיעת טיל"],
+      emergency: ["נפילת טיל"],
       location: ["רחובות"],
     },
       description:"תיאור תיאור ",

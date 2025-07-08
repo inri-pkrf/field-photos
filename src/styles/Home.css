@@ -9,9 +9,9 @@
 
 
 .home-header h1 {
-  margin-top: -3vh;
+  margin-top: 5vh;
   font-family: "Karantina";
-  font-size: 17rem;
+  font-size: 13rem;
   color: #2c3e50;
   margin-bottom: 0.5rem;
   background: linear-gradient(90deg, #0b619a, #1abc9c);
@@ -33,16 +33,16 @@ gap: 296px;
 justify-content: center;
 }
 .feature-card {
-    flex: 1 1 150px;
-    max-width: 1000px;
-    height: 467px;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 2rem 1.5rem;
-    border: 16px #14949c solid;
-    border-radius: 66px;
-    /* box-shadow: 0 4px 10px rgb(0 0 0 / 0.3); */
-    transition: transform 0.3s ease;
-    color: white;
+  flex: 1 1 150px;
+  max-width: 761px;
+  height: 409px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 2rem 1.5rem;
+  border: 16px #14949c solid;
+  border-radius: 66px;
+  /* box-shadow: 0 4px 10px rgb(0 0 0 / 0.3); */
+  transition: transform 0.3s ease;
+  color: white;
 }
 
 .feature-card:hover {

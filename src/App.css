@@ -36,11 +36,3 @@
   overflow-x: hidden;
     direction: rtl;
 }
-.logo{
-  position: relative;
-  top: 2vh;
-  right: 3%;
-  width: 6vw;
-  height: auto;
-  cursor: pointer;
-}

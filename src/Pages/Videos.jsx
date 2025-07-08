@@ -43,24 +43,33 @@ function getAvailableTags(data) {
 }
 
 // פונקציה לבדוק אם סרטון מתאים למסננים שנבחרו
-function matchTags(videoTags, selectedTags, videoDate) {
+function matchTagsAny(videoTags, selectedTags, videoDate) {
+  // אם אין סינון בכלל — מחזיר true
+  const hasAnySelected = Object.values(selectedTags).some(arr => arr.length > 0);
+  if (!hasAnySelected) return true;
+
+  // נבדוק אם הסרטון תואם לפחות תגית אחת מכל התגיות שנבחרו
+  // גם בתאריכים: אם בחרנו תאריך, תואם לפחות אחד מהם
+
+  // בודקים קטגוריה קטגוריה
   for (const key in selectedTags) {
     const selected = selectedTags[key];
     if (selected.length === 0) continue;
 
     if (key === "date") {
-      // השוואת תאריכים לאחר המרה לאובייקט Date
       const videoDateObj = parseDate(videoDate);
-      const selectedDateObj = parseDate(selected[0]);
-      if (!videoDateObj || !selectedDateObj) return false;
-      if (videoDateObj.getTime() !== selectedDateObj.getTime()) return false;
+      const matchesDate = selected.some(dateStr => {
+        const selDateObj = parseDate(dateStr);
+        return videoDateObj && selDateObj && videoDateObj.getTime() === selDateObj.getTime();
+      });
+      if (matchesDate) return true;
     } else {
       const videoTagArray = videoTags[key] || [];
-      const allMatch = selected.every(tag => videoTagArray.includes(tag));
-      if (!allMatch) return false;
+      const matchesTag = selected.some(tag => videoTagArray.includes(tag));
+      if (matchesTag) return true;
     }
   }
-  return true;
+  return false;
 }
 
 export default function Videos({ onSelectVideo, onDeselectVideo }) {
@@ -89,9 +98,9 @@ export default function Videos({ onSelectVideo, onDeselectVideo }) {
   const [openCategory, setOpenCategory] = useState(null);
 
   const filteredVideos = useMemo(() => {
-    return videoData.filter(video => matchTags(video.tags, selectedTags, video.date));
+    return videoData.filter(video => matchTagsAny(video.tags, selectedTags, video.date));
   }, [selectedTags]);
-
+  
   const handleTagToggle = (category, tag) => {
     setSelectedTags(prev => {
       if (category === "date") {
@@ -127,7 +136,7 @@ export default function Videos({ onSelectVideo, onDeselectVideo }) {
   const getHebrewTitle = (key) => {
     switch (key) {
       case 'emergency': return 'אתגרים בחירום';
-      case 'location': return 'מיקום בארץ';
+      case 'location': return 'מיקום';
       case 'date': return 'תאריך';
       default: return key;
     }
@@ -140,7 +149,6 @@ export default function Videos({ onSelectVideo, onDeselectVideo }) {
       </header>
 
       <section className="filter-section">
-        <h2>סינון לפי תגיות</h2>
 
   
 

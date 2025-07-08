@@ -1,0 +1,52 @@
+.nav-container {
+    width: 3840px;
+    height: 15vh;
+    box-sizing: border-box;
+    padding: 40px;
+    position: fixed;
+    margin-top: -10vh;
+    text-align: center;
+    direction: rtl;  
+    background: linear-gradient(to bottom, #000000, #353535);
+
+ }
+ 
+ .logo{
+    position: fixed;
+    z-index: 100000;
+    top: 1vh;
+    right: 52%;
+    width: 6vw;
+    height: auto;
+    cursor: pointer;
+  }
+  
+ 
+ .nav-features {
+   display: flex;
+   flex-wrap: wrap;
+   margin-top: 10vh;
+    gap: 296px;  
+    justify-content: center;
+ }
+
+ 
+
+ .nav-item h2 {
+  font-size: 6rem;
+     font-family: "HEEBO";
+     font-weight: 400;
+     color: #dbdbdb;
+     margin-top: 0.5rem;
+ }
+ 
+ .nav-item h2:hover {
+    cursor: pointer;
+    font-size: 6rem;
+    font-family: "Heebo", sans-serif;
+    font-weight: 400; /* במקום light, כי 'light' הוא לא ערך תקני */
+    color: #dbdbdb;
+    margin-top: 0.5rem;
+    text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;
+  }
+  
