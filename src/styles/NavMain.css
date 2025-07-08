@@ -1,10 +1,11 @@
 .nav-container {
-    width: 3840px;
-    height: 15vh;
+    width: 33.333vw;
+    height: 10vh;
     box-sizing: border-box;
+    left:0%;
     padding: 40px;
     position: fixed;
-    margin-top: -10vh;
+    margin-top: -5vh;
     text-align: center;
     direction: rtl;  
     background: linear-gradient(to bottom, #000000, #353535);
@@ -12,11 +13,11 @@
  }
  
  .logo{
-    position: fixed;
+     position: fixed;
     z-index: 100000;
     top: 1vh;
-    right: 52%;
-    width: 6vw;
+    right: 68%;
+    width: 5vw;
     height: auto;
     cursor: pointer;
   }
@@ -25,15 +26,15 @@
  .nav-features {
    display: flex;
    flex-wrap: wrap;
-   margin-top: 10vh;
-    gap: 296px;  
+   margin-top: -4vh;
+    gap: 96px;  
     justify-content: center;
  }
 
  
 
  .nav-item h2 {
-  font-size: 6rem;
+  font-size: 2rem;
      font-family: "HEEBO";
      font-weight: 400;
      color: #dbdbdb;
@@ -42,11 +43,8 @@
  
  .nav-item h2:hover {
     cursor: pointer;
-    font-size: 6rem;
-    font-family: "Heebo", sans-serif;
-    font-weight: 400; /* במקום light, כי 'light' הוא לא ערך תקני */
+    font-family: "Heebo";
     color: #dbdbdb;
-    margin-top: 0.5rem;
     text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;
   }
   
