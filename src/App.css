@@ -1,6 +1,6 @@
 .app-container {
   display: flex;
-  width: 11520px;
+  width: 100vw;
   height: 100vh;
   overflow: hidden;
   direction: rtl;
@@ -8,7 +8,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&family=Karantina:wght@300;400;700&display=swap');
 @import url(" https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&display=swap");
 .screen {
-  width: 3840px;
+  width: 33.3333vw;
   height: 100vh;
   box-sizing: border-box;
   padding: 40px;
