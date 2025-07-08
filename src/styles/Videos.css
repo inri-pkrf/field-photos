@@ -1,5 +1,5 @@
 .Videos-container {
-  width: 33.3333vw;
+  width: 3840px;
   height: 100vh;
   box-sizing: border-box;
   padding: 40px;
@@ -8,20 +8,20 @@
   background-color: var(--background-dark);
 }
 
-
+/* כותרת */
 .Videos-header {
   text-align: center;
 
 }
 
 .Videos-header h1 {
-     font-family: "Karantina";
-    font-size: 7rem;
-    color: #2c3e50;
-    margin-top: 0.5rem;
-    background: linear-gradient(90deg, #0b619a, #1abc9c);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  font-family: "Karantina";
+  font-size: 14rem;
+  color: #2c3e50;
+  margin-top: 12.5rem;
+  background: linear-gradient(90deg, #0b619a, #1abc9c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .Videos-header p {
@@ -31,13 +31,13 @@
     margin-top: 5vh;
 
 }
-/* 
+
 
 
 .tag-filter {
   display: flex;
     flex-direction: column;
-    margin-bottom: 300px;
+    margin-bottom: 100px;
      flex-direction: column;
     max-width: 1000px;
 }
@@ -74,10 +74,10 @@
   color: var(--text-medium);
 }
 .tags-container {
-  display: grid; 
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
-  gap: 0.5rem 1rem;
-  max-height: 200px; 
+  display: grid; /* במקום flex */
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* עמודות גמישות */
+  gap: 0.5rem 1rem; /* רווח בין שורות לעמודות */
+  max-height: 200px; /* אם רוצים הגבלה גובה עם גלילה */
   overflow-y: auto;
   padding-right: 5px; 
 }
@@ -97,16 +97,16 @@
 
 
 .filter-section {
-  position: fixed;
-  background: linear-gradient(45deg, black, #3b3b3b);
+
+  position: relative;
   width: 1099px;
-  height: 117vh;
+  height: 200vh;
   text-align: center;
   margin-right: 2599px;
   display: flex;
   flex-direction: column;
   margin-top: -181px;
-  gap: 10px;
+  gap: 10px; /* רווח תקין בין האלמנטים */
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: flex-start;
@@ -121,7 +121,7 @@
   transition: all var(--transition-speed) ease;
   text-transform: capitalize;
   color: var(--text-light);
-  margin: 0; 
+  margin: 0; /* לוודא שאין רווחים מיותרים */
 }
 
 .filter-tag:hover {
@@ -131,13 +131,13 @@
 .filter-tag.active {
   background-color: var(--primary-color);
   color: white;
-} */
+}
 
 /* תוצאות */
 .results-section h3 {
   margin-top: -66px;
   color: #138f9b;
-  font-size: 2rem;
+  font-size: 4rem;
   font-family: "HEEBO";
 }
 
@@ -148,11 +148,11 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 60px;
       margin-top: 1vh;
-      max-width: 22.2222vw;
+      max-width: 2453px;
 }
 .results-section{
-     margin-top: -579vh;
-    width: 18.2222vw;
+     margin-top: -193vh;
+    width: 2400px;
 }
 
 /* כרטיסי וידאו */
@@ -162,7 +162,7 @@
     padding: 10px;
     box-shadow: var(--card-shadow);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    height: 247px;
+    height: 847px;
   }
 
 .video-card:hover {
@@ -171,10 +171,10 @@
 }
 
 .video-card h4 {
-    font-size: 1.5rem;
-    font-family: "Heebo";
-    margin-top: 11px;
-    color: white;
+  font-size: 4.5rem;
+  font-family: "Heebo";
+  margin-top: 11px;
+  color: white;
 }
 
 .video-thumbnail {
@@ -194,7 +194,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 100px;
-  margin-top: -30px;
+  margin-top: -7px;
   justify-content:center; /* מרכז את התגיות */
 
 }
@@ -204,7 +204,7 @@
   color: #bb86fc;
   padding: 6px 12px;
   border-radius: 30px;
-  font-size:0.8rem;
+  font-size: 4rem;
   font-family: "Heebo", sans-serif;
   box-shadow: 0 0 20px #bb86fc;
   transition: transform 0.2s ease;
@@ -219,7 +219,7 @@
   color: #3498db; /* כחול */
   padding: 6px 12px;
   border-radius: 30px;
-  font-size: 1rem;
+  font-size: 4rem;
   font-family: "Heebo", sans-serif;
   box-shadow: 0 0 20px rgba(52, 152, 219, 0.6);
   transition: transform 0.2s ease;
@@ -228,7 +228,7 @@
 
 
 .video-card p {
-  font-size: 1rem;
+  font-size: 4rem;
   margin-top: -75px;
   font-family: "Heebo";
   color: white;

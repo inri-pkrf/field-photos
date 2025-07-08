@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/TextDiscription.css";
 
 export default function TextDiscription({ media }) {
-  if (!media) return <p style={{ fontSize: "2.5rem" }}>לא נבחר מדיה</p>;
+  if (!media) return <p style={{ fontSize: "2.5rem" }}></p>;
   console.log({ media })
 
 
