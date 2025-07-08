@@ -148,7 +148,7 @@ export default function Videos({ onSelectVideo, onDeselectVideo }) {
         <h1>מאגר סרטונים</h1>
       </header>
 
-      <section className="filter-section">
+      <div className="filter-section">
 
   
 
@@ -170,9 +170,9 @@ export default function Videos({ onSelectVideo, onDeselectVideo }) {
             setOpenCategory={setOpenCategory}
           />
         ))}
-      </section>
+      </div>
 
-      <section className="results-section">
+      <div className="results-section">
         <h3>תוצאות ({filteredVideos.length})</h3>
         {filteredVideos.length === 0 ? (
           <div className="no-results">
@@ -217,7 +217,7 @@ export default function Videos({ onSelectVideo, onDeselectVideo }) {
             })}
           </div>
         )}
-      </section>
+      </div>
     </div>
   );
 }

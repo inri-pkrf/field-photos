@@ -15,11 +15,11 @@
 }
 
 .right-screen {
-  background: linear-gradient(to right, #5b5b5b, #888888);
+  background: linear-gradient(to bottom,#000000,  #5b5b5b);
 }
 
 .center-screen {
-  background: linear-gradient(to right, #000000, #5b5b5b);
+  background: linear-gradient(to bottom, #000000, #5b5b5b);
 }
 .center-screen p{
   display: none;
