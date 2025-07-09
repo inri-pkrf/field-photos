@@ -17,7 +17,7 @@ const videoData = [
     title: "19.06 פגיעת טיל ",
     url: "https://drive.google.com/file/d/1KE1r42dsDzBaXMMXcesWkQdL9X7zb_fx/view",
     tags: {
-      emergency: [],
+      emergency: ["אתר הרס"],
       location: [],
       date: ["2025-06"]
     },
@@ -31,7 +31,7 @@ const videoData = [
     title: "19.06 חולון",
     url: "https://drive.google.com/file/d/1kQxGUb-W-Opibg56dxcgaXlNOj-9K68K/view",
     tags: {
-      emergency: ["פגיעת טיל"],
+      emergency: ["אתר הרס"],
       location: ["חולון"],
       date: ["2025-06"]
     },
@@ -45,7 +45,7 @@ const videoData = [
     title:  "19.06 חולון",
     url: "https://drive.google.com/file/d/1usUHgoYufcCctMsJ4Jh7fIm5-Qn2C6rC/view",
     tags: {
-      emergency: ["הריסות מבנה"],
+      emergency: ["אתר הרס"],
       location: ["חולון"],
       date: ["2025-06"]
     },
@@ -59,7 +59,7 @@ const videoData = [
     title: "18.06 צפון הארץ ",
     url: "https://drive.google.com/file/d/1qtPHZdD3f-O-AJ9i1I7tcmv0u5ePDv4D/view",
     tags: {
-      emergency: ["שברי טיל"],
+      emergency: ["שברים ורסיסים"],
       location: ["צפון הארץ"],
       date: ["2025-06"]
     },
@@ -73,7 +73,7 @@ const videoData = [
     title: "19.06 חולון",
     url: "https://drive.google.com/file/d/1ncVIS8qgaEwXuiZRKJyuRlSo5ULLBDFV/view",
     tags: {
-      emergency: ["זירת נפילה"],
+      emergency: ["אתר הרס"],
       location: ["חולון"],
     },
     date: "19-06-2025",
@@ -84,7 +84,7 @@ const videoData = [
   {
     id: 7,
     title: "19.06 רמת גן",
-    url: "https://drive.google.com/file/d/1mpxC-6aB3FsNp9AB7YczfVi6MGPff8hJ/view",
+    url: "https://drive.google.com/file/d/1f_O6KQ5zW3br0AUO3XXbewfpkkk30ksU/view",
     tags: {
       emergency: ["פגיעת טיל"],
       location: ["רמת גן"],
@@ -99,7 +99,7 @@ const videoData = [
     title: "בת ים 18.6",
     url: "https://drive.google.com/file/d/1Az09vyImioPg16rVg4oFS5oi6BI42wO6/view",
     tags: {
-      emergency: ["חילוץ מהרס"],
+      emergency: ["חילוץ"],
       location: ["בת ים"],
     },
     date: "18-06-2025",
@@ -138,7 +138,7 @@ const videoData = [
     title: " סורוקה  19.06",
     url: "https://drive.google.com/file/d/1eYPTf5d-2pjwyJWQYT9TaRlPWXJHCJFE/view",
     tags: {
-      emergency: ["זירת הרס"],
+      emergency: ["אתר הרס"],
       location: ["סורוקה"],
     },
     date: "19-06-2025",
@@ -164,7 +164,7 @@ const videoData = [
     title: "19.06 סורוקה",
     url: "https://drive.google.com/file/d/10hYPHBWlEwvyDyCfic03vdMRvXK-oIv2/view",
     tags: {
-      emergency: ["זירת הרס"],
+      emergency: ["אתר הרס"],
       location: ["סורוקה"],
     },
     date: "19-06-2025",
@@ -178,7 +178,7 @@ const videoData = [
     title: "18.06 נפילת רסיס",
     url: "https://drive.google.com/file/d/1_vnl0BhmDRO6sBAZ5l1tC9_M5N5uiJzo/view",
     tags: {
-      emergency: ["זירת נפילה"],
+      emergency: ["שברים ורסיסים"],
       location: [],
     },
     date: "18-06-2025",
@@ -191,7 +191,7 @@ const videoData = [
     title: "17.06 פתח תקוה",
     url: "https://drive.google.com/file/d/1ikQl0XG6JKuNN4zxVTGs1OhKDlkB8NOC/view",
     tags: {
-      emergency: ["חילוץ משטרה"],
+      emergency: ["חילוץ"],
       location: ["פתח תקוה"],
     },
     date: "17-06-2025",
@@ -202,9 +202,9 @@ const videoData = [
   {
     id: 16,
     title: "19.06 חולון",
-    url: "https://drive.google.com/file/d/1o8Y_1nwKt5YIXy6g5cJAHnP3lQZ0oLq-/view",
+    url: "https://drive.google.com/file/d/135zenP9PHx4vR0HQ78-o2wHL9j8YjrSp/view",
     tags: {
-      emergency: ["זירת נפילה"],
+      emergency: ["אתר הרס"],
       location: ["חולון"],
     },
     date: "19-06-2025",
@@ -220,7 +220,7 @@ const videoData = [
     url: "https://drive.google.com/file/d/135zenP9PHx4vR0HQ78-o2wHL9j8YjrSp/view",
     thumbnail: "/thumbnails/event-11-06.jpg",
     tags: {
-      emergency: ["זירת נפילה"],
+      emergency: ["אתר הרס"],
       location: ["חולון"],
     },
     date: "19-06-2025",
@@ -234,7 +234,7 @@ const videoData = [
     url: "https://drive.google.com/file/d/1bESQL7na0TMbfBjTem3_v3LkGSha-Uyf/view",
     thumbnail: "/thumbnails/people-10-06.jpg",
     tags: {
-      emergency: [],
+      emergency: ["שריפה"],
       location: [],
     },
     date: "17-06-2025",
@@ -247,7 +247,7 @@ const videoData = [
     title: "19.06 רמת גן",
     url: "https://drive.google.com/file/d/1redSuI2tlqfWq1JrIUYrI6RkQx7QXvx8/view",
     tags: {
-      emergency: ["זירת הרס"],
+      emergency: ["אתר הרס"],
       location: ["רמת גן"],
     },
     date: "19-06-2025",
@@ -298,7 +298,7 @@ const videoData = [
     title: "19.06 רמת גן ",
     url: "https://drive.google.com/file/d/1f_O6KQ5zW3br0AUO3XXbewfpkkk30ksU/view",
     tags: {
-      emergency: ["פגיעת טיל"],
+      emergency: ["אתר הרס"],
       location: ["רמת גן"],
     },
     date: "19-06-2025",
@@ -311,7 +311,7 @@ const videoData = [
     title: "14.06 ענן עשן",
     url: "https://drive.google.com/file/d/1N-mPCX6HAR6iLBoSuNHc4PP7o3Cq8LVE/view",
     tags: {
-      emergency: ["עשן"],
+      emergency: ["שריפה"],
       location: [],
     },
     date: "14-06-2025",
@@ -321,9 +321,9 @@ const videoData = [
   {
     id: 25,
     title: "15.06  שברי טיל",
-    url: "https://drive.google.com/file/d/1bZdis3x_awBR5QK-pUj8JcoYCsNXAi1q/view",
+    url: "https://drive.google.com/file/d/101Gwke71CMePz-UYJ8yUyDF1IqWRb8ih/view",
     tags: {
-      emergency: ["שברי טיל"],
+      emergency: ["שברים ורסיסים"],
       location: [],
     },
     date: "15-06-2025",
@@ -348,7 +348,7 @@ const videoData = [
     title: "17.06  פקיוד העורף ישיבת מצב",
     url: "https://drive.google.com/file/d/1hYL-JSg2_vkjpumaF_hPuMPkgvh5KPA3/view",
     tags: {
-      emergency: ["ישיבות מצב"],
+      emergency: [`חפ"ק`],
       location: ['פקע"ר'],
   
     },
@@ -362,7 +362,7 @@ const videoData = [
     title: "14.06 מרכז הארץ",
     url: "https://drive.google.com/file/d/1fcX2WU1SYwcIHqg6qk65HI3qvRty7Zp5/view",
     tags: {
-      emergency: ["זירת הרס"],
+      emergency: ["אתר הרס"],
       location: ["מרכז הארץ"],
     },
     date: "14-06-2025",
@@ -375,7 +375,7 @@ const videoData = [
     title: "13.06 מרכז הארץ",
     url: "https://drive.google.com/file/d/1xFnxv3biIJw3wXG-vdPfcCA4ZyDxWkMq/view",
     tags: {
-      emergency: ["זירת הרס"],
+      emergency: ["אתר הרס"],
       location: ["מרכז הארץ"],
     },
     date: "13-06-2025",
@@ -387,7 +387,7 @@ const videoData = [
     title: "20.06 יירוט כב",
     url: "https://drive.google.com/file/d/1Dm7ea6cDM6csqc0ZZn638v7jDRy5mvIA/view",
     tags: {
-      emergency: ["ירוט כב"],
+      emergency: ["יירוטים"],
       location: ["תל אביב"],
     },
     date: "20-05-2025",
@@ -426,7 +426,7 @@ const videoData = [
     url: "https://drive.google.com/file/d/1we8bqq_v_C_OhY4gG3d--1ew614ryKRh/view",
     tags: {
       emergency: ["אזעקה"],
-      location: ["צפון"]
+      location: ["צפון הארץ"]
     },
     date: "22-06-2025",
     description:"תיאור תיאור ",
@@ -437,7 +437,7 @@ const videoData = [
     title: "22.06 צפון",
     url: "https://drive.google.com/file/d/1rc_SZyBIXseyptnHhIGYU2YMTMhk0_6q/view",
     tags: {
-      emergency: ["זירת הרס"],
+      emergency: ["אתר הרס"],
       location: ["צפון הארץ"],
     },
     date: "22-06-2025",
@@ -450,7 +450,7 @@ const videoData = [
     title: "22.06 צפון",
     url: "https://drive.google.com/file/d/16h-PKoCUY26cqmsJWPowabGwzsDcQALJ/view",
     tags: {
-      emergency: ["עשן"],
+      emergency: ["שריפה"],
       location: ["צפון הארץ"],
     },
       description:"תיאור תיאור ",
@@ -463,7 +463,7 @@ const videoData = [
     title: "21.06 חולון",
     url: "https://drive.google.com/file/d/1RHGZCN4-USKH50NMdLF6w56u_hohWo6k/view",
     tags: {
-      emergency: ["כוחות חילוץ"],
+      emergency: ["חילוץ"],
       location: ["חולון"],
     },
       description:"תיאור תיאור ",
@@ -489,7 +489,7 @@ const videoData = [
     title: "21.06 בית שאן",
     url: "https://drive.google.com/file/d/19D0VVFZS8fiA7hawUgka_t1xaWKqE01P/view",
     tags: {
-      emergency: ["זירת הרס"],
+      emergency: ["אתר הרס"],
       location: ["בית שאן"],
     },
       description:"תיאור תיאור ",
@@ -502,7 +502,7 @@ const videoData = [
     title: "22.06 תל אביב",
     url: "https://drive.google.com/file/d/1bcrTrxdj0Q3iPtYz48ag3D24yo74z4nk/view",
     tags: {
-      emergency: ["כוחות חילוץ"],
+      emergency: ["חילוץ"],
       location: ["תל אביב"],
     },
       description:"תיאור תיאור ",
@@ -528,7 +528,7 @@ const videoData = [
     title: "24.06 באר שבע",
     url: "https://drive.google.com/file/d/1feGf4D3Bp0G0YqBwojQ-avnLO6X2MbkQ/view",
     tags: {
-      emergency: ["זירת הרס"],
+      emergency: ["אתר הרס"],
       location: ["באר שבע"],
     },
       description:"תיאור תיאור ",
@@ -541,7 +541,7 @@ const videoData = [
     title: "24.06 באר שבע",
     url: "https://drive.google.com/file/d/18oniMA83eszwCpBxuarY9BArSF1F6W6b/view",
     tags: {
-      emergency: ["זירת הרס"],
+      emergency: ["אתר הרס"],
       location: ["באר שבע"],
     },
       description:"תיאור תיאור ",
@@ -554,7 +554,7 @@ const videoData = [
     title: "24.06 באר שבע",
     url: "https://drive.google.com/file/d/1EDk8IMuuRnO7Vj0w43b987ncjssgMtgV/view",
     tags: {
-      emergency: ["זירת הרס"],
+      emergency: ["אתר הרס"],
       location: ["באר שבע"],
     },
       description:"תיאור תיאור ",
@@ -567,7 +567,7 @@ const videoData = [
     title: "24.06 באר שבע",
     url: "https://drive.google.com/file/d/13wdIXscVcvk5Cayii25_5uUSCh8tRez7/view",
     tags: {
-      emergency: ["כוחות חילוץ "],
+      emergency: ["חילוץ"],
       location: ["באר שבע"],
     },
       description:"תיאור תיאור ",
@@ -580,7 +580,7 @@ const videoData = [
     title: "24.06 באר שבע",
     url: "https://drive.google.com/file/d/1h8aTQRguSCyNhJCc4rO0Mih6KrdTxzQB/view",
     tags: {
-      emergency: ["זירת הרס"],
+      emergency: ["אתר הרס"],
       location: ["באר שבע"],
     },
       description:"תיאור תיאור ",
@@ -606,7 +606,7 @@ const videoData = [
     title: "24.06 באר שבע",
     url: "https://drive.google.com/file/d/1gd3W_wk-vzcfzP3pys3q-wN3scuPhhzE/view",
     tags: {
-      emergency: ["זירת הרס"],
+      emergency: ["אתר הרס"],
       location: ["באר שבע"],
     },
       description:"תיאור תיאור ",
@@ -619,7 +619,7 @@ const videoData = [
     title: "24.06 באר שבע",
     url: "https://drive.google.com/file/d/1Mz_sz0fFRW1WcskALZ6a50pYy7SV7cBV/view",
     tags: {
-      emergency: ["זירת הרס"],
+      emergency: ["אתר הרס"],
       location: ["באר שבע"],
     },
       description:"תיאור תיאור ",
@@ -632,7 +632,7 @@ const videoData = [
     title: "20.06 רחובות ",
     url: "https://drive.google.com/file/d/1fem0yD8zFfelU64XwcfM4L2mpTP-ry4R/view",
     tags: {
-      emergency: ["זירת הרס"],
+      emergency: ["אתר הרס"],
       location: ["רחובות"],
     },
       description:"תיאור תיאור ",
