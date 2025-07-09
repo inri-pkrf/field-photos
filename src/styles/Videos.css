@@ -37,7 +37,7 @@
 .tag-filter {
   display: flex;
     flex-direction: column;
-    margin-bottom: 200px;
+    margin-bottom: -34px;
      flex-direction: column;
     max-width: 1000px;
 }
@@ -83,8 +83,6 @@
 }
 
 
-
-
 .filter-section h2{
   margin-top: 41px;
   text-align: center;
@@ -97,7 +95,6 @@
 
 
 .filter-section {
-
   position: relative;
   width: 1099px;
   height: 200vh;
@@ -135,7 +132,7 @@
 
 /* תוצאות */
 .results-section h3 {
-  margin-top: -66px;
+  margin-top: -2px;
   color: #138f9b;
   font-size: 4rem;
   font-family: "HEEBO";
@@ -151,8 +148,12 @@
       max-width: 2453px;
 }
 .results-section{
-     margin-top: -193vh;
+margin-top: -193vh;
     width: 2400px;
+    position: relative;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 100%;
 }
 
 /* כרטיסי וידאו */

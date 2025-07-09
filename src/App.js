@@ -46,7 +46,8 @@ function AppWrapper() {
       </div>
 
       {/* שמאל */}
-      <div className={`screen left-screen ${isHome ? "" : "scrollable"}`} >
+      {/* <div className={`screen left-screen ${isHome ? "" : "scrollable"}`} > */}
+      <div className="screen left-screen" >
       <NavMain/>
 
       <Routes>

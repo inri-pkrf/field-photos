@@ -100,7 +100,7 @@ export default function Videos({ onSelectVideo, onDeselectVideo }) {
   const filteredVideos = useMemo(() => {
     return videoData.filter(video => matchTagsAny(video.tags, selectedTags, video.date));
   }, [selectedTags]);
-  
+
   const handleTagToggle = (category, tag) => {
     setSelectedTags(prev => {
       if (category === "date") {
@@ -150,13 +150,9 @@ export default function Videos({ onSelectVideo, onDeselectVideo }) {
 
       <div className="filter-section">
 
-  
-
-  <button className="clear-filters-btn" onClick={handleClearAll}>
-    נקה הכול
-  </button>
-
-
+        <button className="clear-filters-btn" onClick={handleClearAll}>
+          נקה הכול
+        </button>
 
         {["emergency", "location", "date"].map(category => (
           <TagFilter
@@ -191,12 +187,12 @@ export default function Videos({ onSelectVideo, onDeselectVideo }) {
                   onClick={() => handleVideoSelect(video)}
                 >
                   {driveId ? (
-                     <img
-                     src={`https://drive.google.com/thumbnail?id=${driveId}`}
-                     alt={video.title}
-                     className="video-thumbnail"
-                     onClick={() => handleVideoSelect(video)}
-                   />
+                    <img
+                      src={`https://drive.google.com/thumbnail?id=${driveId}`}
+                      alt={video.title}
+                      className="video-thumbnail"
+                      onClick={() => handleVideoSelect(video)}
+                    />
                   ) : (
                     <div className="no-preview">אין תצוגה מקדימה</div>
                   )}
